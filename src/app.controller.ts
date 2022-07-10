@@ -10,7 +10,7 @@ export class AppController {
   @Get('*')
   public root(@Res() res: Response): any {
     // res.sendFile('index.html');
-    res.sendFile('index.html',{ root: "/Users/zaidafzal/Documents/NestJS/zaidafzal_com_v3/public"});
+    res.sendFile('index.html',{ root: "/usr/src/app/public"});
   }
 
 }
