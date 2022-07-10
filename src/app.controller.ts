@@ -7,10 +7,15 @@ import { Response } from 'express';
 export class AppController {
   constructor(private readonly appService: AppService) {}
 
-  @Get('*')
+  @Get('/')
   public root(@Res() res: Response): any {
-    // res.sendFile('index.html');
     res.sendFile('index.html',{ root: "/usr/src/app/public"});
+  }
+
+  @Get('/feedback')
+  public feedback(@Res() res: Response): any {
+    res.sendFile('index.html',{ root: "/usr/src/app/public"});
+    res.redirect('https://docs.google.com/forms/d/e/1FAIpQLSfDCBa-9DFyqL7aen0Brmf0xoJcVOC4mqokAklCed6SRzw7Wg/viewform?usp=sf_link');
   }
 
 }
